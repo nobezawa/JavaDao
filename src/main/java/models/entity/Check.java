@@ -7,7 +7,7 @@ import com.avaje.ebean.Model;
 import java.util.Date;
 
 /**
- * Created by nobesawa on 15/07/05.
+ * Check entity bean.
  */
 @Entity
 @Table(name="checks")

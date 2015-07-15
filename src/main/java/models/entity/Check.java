@@ -13,7 +13,8 @@ import java.util.Date;
 @Table(name="checks")
 public class Check extends Model{
 
-    public static final Finder<Long,Check> find = new Finder<>(Long.class, Check.class);
+    
+    public static final Find<Long,Check> finder = new Find<Long, Check>(){};
 
     @Id
     Long id;

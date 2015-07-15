@@ -4,8 +4,8 @@ import com.avaje.ebean.Ebean;
 import com.avaje.ebean.TxRunnable;
 import models.entity.Check;
 import org.avaje.agentloader.AgentLoader;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Date;
 
@@ -14,16 +14,15 @@ import java.util.Date;
  */
 public class Main {
 
-    //protected static Logger logger = LoggerFactory.getLogger(Main.class);
+    protected static Logger logger = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) {
 
-        //someApplicationBootupMethod();
+        someApplicationBootupMethod();
         AgentLoader.loadAgentFromClasspath("avaje-ebeanorm-agent", "debug=1");
         Ebean.execute(new TxRunnable() {
             public void run() {
                 Check check = new Check();
-                Check check2 = new Check();
 
                 String name = "aaaasakuro";
                 Date created = new Date();
@@ -39,10 +38,10 @@ public class Main {
         });
     }
 
-//    public static void someApplicationBootupMethod() {
-//        // Load the agent into the running JVM process
-//        if (!AgentLoader.loadAgentFromClasspath("avaje-ebeanorm-agent", "debug=1;packages=models.entity.**")) {
-//            logger.info("avaje-ebeanorm-agent not found in classpath - not dynamically loaded");
-//        }
-//    }
+    public static void someApplicationBootupMethod() {
+        // Load the agent into the running JVM process
+        if (!AgentLoader.loadAgentFromClasspath("avaje-ebeanorm-agent", "debug=1;packages=models.entity.**")) {
+            logger.info("avaje-ebeanorm-agent not found in classpath - not dynamically loaded");
+        }
+    }
 }

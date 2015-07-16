@@ -26,6 +26,11 @@ public class Check extends Model{
 
     Date modified;
 
+    public Check setId(Long id) {
+        this.id = id;
+        return this;
+    }
+
     public Check setName(String name) {
         this.name = name;
         return this;
